@@ -1,7 +1,7 @@
 {
-  "name": "alaia-bot",
+  "name": "alaia-bot2",
   "version": "1.0.0",
-  "description": "Asistente de IA para WhatsApp Business de Alaia Clothes",
+  "description": "Alaia2",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
