@@ -1,0 +1,15 @@
+{
+  "name": "alaia-bot",
+  "version": "1.0.0",
+  "description": "Bot para Alaia Clothes usando venom-bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Kelvin",
+  "license": "ISC",
+  "dependencies": {
+    "venom-bot": "^5.0.5"
+  }
+}
