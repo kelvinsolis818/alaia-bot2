@@ -3,17 +3,22 @@ const venom = require('venom-bot');
 venom
   .create({
     session: 'AlaiaSession',
-    multidevice: true
+    headless: false, // Esto permite mostrar el QR
+    multidevice: true,
+    useChrome: true,
+    disableWelcome: true,
   })
-  .then((client) => start(client))
-  .catch((erro) => {
-    console.log(erro);
-  });
+  .then((client) => {
+    console.log('🤖 Bot conectado exitosamente');
+    
+    // Aquí puedes empezar a programar las respuestas del bot
+    client.onMessage(async (message) => {
+      if (message.body === 'hola' && message.isGroupMsg === false) {
+        await client.sendText(message.from, '¡Hola! Soy el bot de Alaia Clothes 👗✨. ¿En qué puedo ayudarte hoy?');
+      }
+    });
 
-function start(client) {
-  client.onMessage((message) => {
-    if (message.body === 'Hola' && message.isGroupMsg === false) {
-      client.sendText(message.from, '¡Hola! Soy el Asistente de Alaia Clothes. ¿En qué puedo ayudarte hoy?');
-    }
+  })
+  .catch((erro) => {
+    console.error('❌ Error al iniciar el bot:', erro);
   });
-}
